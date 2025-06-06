@@ -170,6 +170,7 @@ Fontes: AAG IT (2025): https://aag-it.com/the-latest-phishing-statistics/ e Astr
 
 5. Geração de Arquivo de Saída
 O script também gera um arquivo de texto chamado resultado_bayes.txt, que contém todos os detalhes da execução:
+
 ```
 Python
 
@@ -201,7 +202,7 @@ Os passos detalhados do cálculo.
 O resultado final (P(Spam∣Phishing)).
 As fontes dos dados.
 6. Resultados e Análise
-Ao executar o código com os dados fornecidos, o resultado esperado para P(Spam∣Phishing) é de aproximadamente 0.976510 (97.65%).
+Ao executar o código com os dados fornecidos, o resultado esperado para P(Spam∣Phishing) é de aproximadamente 0.993810 (99.38%).
 
 Este resultado indica que, se um e-mail for classificado como phishing, a probabilidade de ele também ser spam é extremamente alta. Isso valida a intuição de que a grande maioria dos ataques de phishing ocorre por meio de e-mails de spam.
 
