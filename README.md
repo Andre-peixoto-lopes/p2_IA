@@ -1,3 +1,4 @@
+
 # Documentação do Projeto: Teorema de Bayes - Análise de Probabilidade de Spam dado Phishing
 
 ---
@@ -40,73 +41,8 @@ O código Python é composto por uma função principal e a execução do cálcu
 
 ### 3.1. Função `teorema_de_bayes`
 
-```python
-def teorema_de_bayes(p_a, p_b_dado_a, p_b_dado_nao_a):
-    p_nao_a = 1 - p_a
-    numerador = p_b_dado_a * p_a
-    denominador = (p_b_dado_a * p_a) + (p_b_dado_nao_a * p_nao_a)
-    p_a_dado_b = numerador / denominador
-
-    explicacao = [
-        f"Passo 1: Calcular P(¬A) = 1 - P(A) = {p_nao_a:.6f}",
-        f"Passo 2: Calcular Numerador = P(B|A) * P(A) = {numerador:.6f}",
-        f"Passo 3: Calcular Denominador = P(B|A)*P(A) + P(B|¬A)*P(¬A) = {denominador:.6f}",
-        f"Passo 4: Calcular P(A|B) = Numerador / Denominador = {p_a_dado_b:.6f}",
-    ]
-
-    for linha in explicacao:
-        print(linha)
-    return p_a_dado_b, explicacao
 ```
-Compreendi agora! Peço desculpas pela confusão. Minha intenção foi fornecer o texto que você poderia copiar e colar diretamente, mas entendi que você quer que eu gere o Markdown com todas as tags visíveis na saída para que você possa ver a estrutura e copiar.
-
-Aqui está o conteúdo exato que você deve salvar como um arquivo .md, incluindo os delimitadores de código (```) e as linhas horizontais (---) como você pediu.
-
-Markdown
-
-# Documentação do Projeto: Teorema de Bayes - Análise de Probabilidade de Spam dado Phishing
-
----
-
-## 1. Introdução
-
-Este projeto implementa o **Teorema de Bayes** para calcular a probabilidade de um e-mail ser **spam**, dado que ele foi identificado como um e-mail de **phishing**. A análise é crucial para sistemas de segurança de e-mail, permitindo uma compreensão mais aprofundada da relação entre essas duas categorias de ameaças. O objetivo é fornecer uma ferramenta clara e explicativa para demonstrar o cálculo bayesiano passo a passo.
-
----
-
-## 2. O Que é o Teorema de Bayes?
-
-O Teorema de Bayes é uma fórmula matemática usada para calcular a **probabilidade condicional** de um evento. Ele descreve como atualizar a probabilidade de uma hipótese com base em novas evidências. A fórmula geral é:
-
-<span class="math-inline">P\(A\|B\) \= \\frac\{P\(B\|A\) \\cdot P\(A\)\}\{P\(B\)\}</span>
-
-Onde:
-* <span class="math-inline">P\(A\|B\)</span>: Probabilidade de A acontecer dado que B aconteceu (probabilidade a posteriori).
-* <span class="math-inline">P\(B\|A\)</span>: Probabilidade de B acontecer dado que A aconteceu (verossimilhança).
-* <span class="math-inline">P\(A\)</span>: Probabilidade de A acontecer (probabilidade a priori).
-* <span class="math-inline">P\(B\)</span>: Probabilidade de B acontecer.
-
-No contexto deste projeto, estamos interessados em:
-* **A**: O evento de um e-mail ser **Spam**.
-* **B**: O evento de um e-mail ser **Phishing**.
-
-Portanto, a fórmula se traduz para:
-
-<span class="math-inline">P\(\\text\{Spam\}\|\\text\{Phishing\}\) \= \\frac\{P\(\\text\{Phishing\}\|\\text\{Spam\}\) \\cdot P\(\\text\{Spam\}\)\}\{P\(\\text\{Phishing\}\)\}</span>
-
-Onde <span class="math-inline">P\(\\text\{Phishing\}\)</span> é calculado como:
-
-<span class="math-inline">P\(\\text\{Phishing\}\) \= P\(\\text\{Phishing\}\|\\text\{Spam\}\) \\cdot P\(\\text\{Spam\}\) \+ P\(\\text\{Phishing\}\|\\neg\\text\{Spam\}\) \\cdot P\(\\neg\\text\{Spam\}\)</span>
-
----
-
-## 3. Estrutura do Código
-
-O código Python é composto por uma função principal e a execução do cálculo com dados específicos.
-
-### 3.1. Função `teorema_de_bayes`
-
-```python
+python
 def teorema_de_bayes(p_a, p_b_dado_a, p_b_dado_nao_a):
     p_nao_a = 1 - p_a
     numerador = p_b_dado_a * p_a
@@ -139,18 +75,18 @@ A função retorna dois valores:
 
 A probabilidade P(A∣B) calculada.
 Uma lista de strings (explicacao) detalhando cada passo do cálculo, formatado para facilitar a compreensão.
-
+```
 3.2. Execução Principal
 ```
 Python
 
 print("==== Teorema de Bayes: Probabilidade de Spam dado Phishing ====\n")
-
+```
 # Dados com base em fontes reais:
 p_a = 0.468  # P(Spam)
 p_b_dado_a = 0.01825  # P(Phishing | Spam)
 p_b_dado_nao_a = 0.0001  # P(Phishing | ¬Spam)
-```
+
 # Cálculo
 resultado, passos = teorema_de_bayes(p_a, p_b_dado_a, p_b_dado_nao_a)
 resultado_str = f"\nResultado final: P(Spam | Phishing) = {resultado:.6f} ({resultado * 100:.2f}%)"
@@ -193,7 +129,7 @@ with open("resultado_bayes.txt", "w", encoding="utf-8") as f:
         f.write("- " + fonte + "\n")
 
 print("\nArquivo 'resultado_bayes.txt' gerado com sucesso.")
-````
+```
 Este arquivo serve como um registro completo da análise, incluindo:
 
 O título do projeto.
@@ -201,6 +137,7 @@ As probabilidades de entrada (P(Spam), P(Phishing | Spam), P(Phishing | ¬Spam))
 Os passos detalhados do cálculo.
 O resultado final (P(Spam∣Phishing)).
 As fontes dos dados.
+
 6. Resultados e Análise
 Ao executar o código com os dados fornecidos, o resultado esperado para P(Spam∣Phishing) é de aproximadamente 0.993810 (99.38%).
 
