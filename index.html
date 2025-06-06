@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teorema de Bayes - Spam e Phishing</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Teorema de Bayes: Probabilidade de Spam dado Phishing</h1>
+
+    <div class="form">
+      <label>P(Spam): <input type="number" id="pA" step="any" value="0.468"></label>
+      <label>P(Phishing | Spam): <input type="number" id="pBgivenA" step="any" value="0.01825"></label>
+      <label>P(Phishing | ¬Spam): <input type="number" id="pBgivenNotA" step="any" value="0.0001"></label>
+      <button onclick="calcularBayes()">Calcular</button>
+    </div>
+
+    <div id="resultado" class="resultado"></div>
+
+    <div class="fontes">
+      <h2>Fontes:</h2>
+      <ul>
+        <li>Mailmodo (2025): <a href="https://www.mailmodo.com/guides/email-spam-statistics/" target="_blank">mailmodo.com</a></li>
+        <li>AAG IT (2025): <a href="https://aag-it.com/the-latest-phishing-statistics/" target="_blank">aag-it.com</a></li>
+        <li>Astra Security (2025): <a href="https://www.getastra.com/blog/security-audit/phishing-attack-statistics/" target="_blank">getastra.com</a></li>
+      </ul>
+    </div>
+
+    <script src="script.js"></script>
+  </div>
+</body>
+</html>
